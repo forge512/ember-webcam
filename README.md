@@ -1,6 +1,6 @@
 # ember-webcam
 
-This README outlines the details of collaborating on this Ember addon.
+Ember addon for WebcamJS integration.
 
 ## Installation
 
