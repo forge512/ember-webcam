@@ -10,9 +10,9 @@ export default Component.extend({
   didRender() {
     this._super(...arguments);
     Webcam.setSWFLocation('/assets/webcam.swf');
-    Webcam.on('error', errorMessage => {
+    Webcam.on('error', error => {
       if (!this.isDestroying && !this.isDestroyed) {
-        this.get('didError')(errorMessage);
+        this.get('didError')(error);
       }
     });
     Webcam.attach('#' + this.get('cameraId'));

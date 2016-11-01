@@ -1,27 +1,44 @@
 # ember-webcam
 
-Ember addon for WebcamJS integration.
+This Ember CLI addon is a simple wrapper for [WebcamJS](https://pixlcore.com/read/WebcamJS) (v1.0.16). This addon uses Ember CLI v2.9.0.
 
 ## Installation
 
-* `git clone <repository-url>` this repository
-* `cd ember-webcam`
-* `npm install`
-* `bower install`
+```
+ember install ember-webcam
+```
 
-## Running
+## Usage
 
-* `ember serve`
-* Visit your app at [http://localhost:4200](http://localhost:4200).
+```js
+import Controller from 'ember-controller';
 
-## Running Tests
+export default Controller.extend({
+  dataUri: null,
+  actions: {
+    takeSnapshot(snap) {
+      snap();
+    },
+    didSnap(dataUri) {
+      this.set('dataUri', dataUri);
+    },
+    didError(error) {
+      console.error(error);
+    }
+  }
+});
+```
 
-* `npm test` (Runs `ember try:each` to test your addon against multiple Ember versions)
-* `ember test`
-* `ember test --server`
+```hbs
+{{#ember-webcam didSnap=(action 'didSnap') didError=(action 'didError') as |snap|}}
+  <button {{action 'takeSnapshot' snap}}>
+    Take a snapshot!
+  </button>
+{{/ember-webcam}}
 
-## Building
+<img src={{dataUri}}>
+```
 
-* `ember build`
+## License
 
-For more information on using ember-cli, visit [https://ember-cli.com/](https://ember-cli.com/).
+This addon is [MIT Licensed](https://github.com/leizhao4/ember-webcam/blob/master/LICENSE.md).
