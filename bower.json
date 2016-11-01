@@ -2,6 +2,9 @@
   "name": "ember-webcam",
   "dependencies": {
     "ember": "~2.9.0",
-    "ember-cli-shims": "0.1.3"
+    "ember-cli-shims": "0.1.3",
+    "mocha": "~2.2.4",
+    "chai": "~2.3.0",
+    "ember-mocha-adapter": "~0.3.1"
   }
 }
