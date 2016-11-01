@@ -1,0 +1,7 @@
+{{#ember-webcam didSnap=(action didSnap) as |snap|}}
+  <button {{action 'takeSnapshot' snap}}>
+    Take a snapshot!
+  </button>
+{{/ember-webcam}}
+
+<img src={{dataUri}}>

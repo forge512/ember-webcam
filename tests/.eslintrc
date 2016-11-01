@@ -1,0 +1,32 @@
+globals:
+  document: false
+  window: false
+  location: false
+  setTimeout: false
+  $: false
+  -Promise: false
+  ok: false
+  expect: false
+  equal: false
+  module: false
+  test: false
+  define: false
+  console: false
+  visit: false
+  exists: false
+  fillIn: false
+  click: false
+  select: false
+  keyEvent: false
+  triggerEvent: false
+  find: false
+  findWithAssert: false
+  wait: false
+  DS: false
+  andThen: false
+  currentURL: false
+  currentPath: false
+  currentRouteName: false
+
+rules:
+  no-unused-expressions: 0

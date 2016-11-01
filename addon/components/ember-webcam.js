@@ -1,0 +1,36 @@
+import Component from 'ember-component';
+import computed from 'ember-computed';
+import Webcam from 'npm:webcamjs';
+import layout from '../templates/components/ember-webcam';
+
+export default Component.extend({
+  layout,
+  classNames: ['ember-webcam'],
+  cameraId: computed(() => 'cam-' + Math.random().toString(36).substr(2, 10)),
+  didRender() {
+    this._super(...arguments);
+    Webcam.setSWFLocation('/assets/webcam.swf');
+    Webcam.on('error', errorMessage => {
+      if (!this.isDestroying && !this.isDestroyed) {
+        this.get('didError')(errorMessage);
+      }
+    });
+    Webcam.attach('#' + this.get('cameraId'));
+  },
+  willDestroy() {
+    Webcam.reset();
+    Webcam.off('error');
+    this._super(...arguments);
+  },
+  didSnap() {},
+  didError() {},
+  actions: {
+    snap() {
+      Webcam.snap(dataUri => {
+        if (!this.isDestroying && !this.isDestroyed) {
+          this.get('didSnap')(dataUri);
+        }
+      });
+    }
+  }
+});

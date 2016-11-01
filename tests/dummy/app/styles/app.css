@@ -1,0 +1,21 @@
+.ember-webcam {
+  width: 400px;
+  text-align: center;
+}
+
+.ember-webcam-viewer {
+  width: 400px;
+  height: 300px;
+}
+
+button {
+  margin: 20px auto;
+  padding: 20px;
+  font-size: 24px;
+}
+
+img {
+  width: 400px;
+  height: 300px;
+  text-align: center;
+}
