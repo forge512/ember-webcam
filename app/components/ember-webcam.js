@@ -1,4 +1,5 @@
-import EmberWebcamComponent from 'ember-webcam/components/ember-webcam';
-import Chart from 'npm:webcamjs';
+import WebcamComponent from 'ember-webcam/components/ember-webcam';
+import Webcam from 'npm:webcamjs';
 
-export default EmberWebcamComponent;
+export default WebcamComponent;
+export { Webcam };
