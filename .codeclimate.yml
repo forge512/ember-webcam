@@ -1,0 +1,26 @@
+---
+engines:
+  csslint:
+    enabled: true
+  duplication:
+    enabled: true
+    config:
+      languages:
+        javascript:
+          mass_threshold: 52
+    exclude_paths:
+      - "config/*.js"
+      - "tests/**/*.js"
+  eslint:
+    enabled: true
+  fixme:
+    enabled: true
+    checks:
+      TODO:
+        enabled: false
+ratings:
+  paths:
+  - "**.css"
+  - "**.js"
+exclude_paths:
+  - vendor/

@@ -7,10 +7,10 @@ import page from './page';
 describeComponent('ember-webcam', 'Integration: EmberWebcamComponent', {
   integration: true
 }, () => {
-
   beforeEach(function () {
     page.setContext(this);
   });
+
   afterEach(() => {
     page.removeContext();
   });
@@ -43,5 +43,4 @@ describeComponent('ember-webcam', 'Integration: EmberWebcamComponent', {
     `);
     page.button.click();
   });
-
 });
