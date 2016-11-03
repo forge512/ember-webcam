@@ -7,6 +7,12 @@ export default Component.extend({
   layout,
   classNames: ['ember-webcam'],
   cameraId: computed(() => 'cam-' + Math.random().toString(36).substr(2, 10)),
+  init() {
+    this._super(...arguments);
+    this.set('camera', {
+      snap: this.snap.bind(this)
+    });
+  },
   didRender() {
     this._super(...arguments);
     Webcam.setSWFLocation('/assets/webcam.swf');
@@ -22,15 +28,13 @@ export default Component.extend({
     Webcam.off('error');
     this._super(...arguments);
   },
+  snap() {
+    Webcam.snap(dataUri => {
+      if (!this.isDestroying && !this.isDestroyed) {
+        this.get('didSnap')(dataUri);
+      }
+    });
+  },
   didSnap() {},
-  didError() {},
-  actions: {
-    snap() {
-      Webcam.snap(dataUri => {
-        if (!this.isDestroying && !this.isDestroyed) {
-          this.get('didSnap')(dataUri);
-        }
-      });
-    }
-  }
+  didError() {}
 });

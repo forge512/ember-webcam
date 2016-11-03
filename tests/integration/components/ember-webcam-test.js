@@ -23,11 +23,9 @@ describeComponent('ember-webcam', 'Integration: EmberWebcamComponent', {
   it('takes a snapshot', done => {
     let isDone = false;
     page.context.setProperties({
-      takeSnapshot(snap) {
-        snap();
-      },
-      didError(errorMessage) {
-        expect(errorMessage).to.be.ok;
+      didError(error) {
+        // Should fail because camera is not available in test environment.
+        expect(error.name).to.equal('WebcamError');
         if (!isDone) {
           done();
           isDone = true;
@@ -35,9 +33,9 @@ describeComponent('ember-webcam', 'Integration: EmberWebcamComponent', {
       }
     });
     page.render(hbs`
-      {{#ember-webcam didError=(action didError) as |snap|}}
-        <button {{action takeSnapshot snap}}>
-          Take a snapshot!
+      {{#ember-webcam didError=(action didError) as |camera|}}
+        <button {{action camera.snap}}>
+          Take Snapshot!
         </button>
       {{/ember-webcam}}
     `);
