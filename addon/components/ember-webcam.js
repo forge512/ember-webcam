@@ -24,7 +24,7 @@ export default Component.extend({
   },
   didSnap() {},
   didError() {},
-  actions: {
+  camera: {
     snap() {
       Webcam.snap(dataUri => {
         if (!this.isDestroying && !this.isDestroyed) {

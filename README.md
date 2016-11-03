@@ -20,13 +20,12 @@ import Controller from 'ember-controller';
 export default Controller.extend({
   dataUri: null,
   actions: {
-    takeSnapshot(snap) {
-      snap();
-    },
     didSnap(dataUri) {
+      // Returns a data URI when snapshot is taken.
       this.set('dataUri', dataUri);
     },
     didError(error) {
+      // Fires when a WebcamError occurs.
       console.error(error);
     }
   }
@@ -34,9 +33,12 @@ export default Controller.extend({
 ```
 
 ```hbs
-{{#ember-webcam didSnap=(action 'didSnap') didError=(action 'didError') as |snap|}}
-  <button {{action 'takeSnapshot' snap}}>
-    Take a snapshot!
+{{#ember-webcam
+  didSnap=(action 'didSnap')
+  didError=(action 'didError')
+  as |camera|}}
+  <button {{action camera.snap}}>
+    Take Snapshot!
   </button>
 {{/ember-webcam}}
 
