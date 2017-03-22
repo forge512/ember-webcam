@@ -3,15 +3,24 @@
 
 module.exports = {
   name: 'ember-webcam',
-  init() {
-    this._super.init && this._super.init.apply(this, arguments);
-    let assetsPath = require('path').join('webcamjs', 'webcam.js');
-    this.treePaths['vendor'] =
-      require.resolve('webcamjs').replace(assetsPath, '');
+  options: {
+    nodeAssets: {
+      webcamjs: {
+        vendor: ['webcam.js'],
+        public: {
+          distDir: 'assets',
+          include: ['webcam.swf']
+        }
+      }
+    }
   },
-  included() {
-    this.app.import('vendor/webcamjs/webcam.swf', {
-      destDir: 'assets'
+  included(parent) {
+    this._super.included.apply(this, arguments);
+    this.import('vendor/webcamjs/webcam.js', {
+      using: [{
+        transformation: 'amd',
+        as: 'webcamjs'
+      }]
     });
   }
 };

@@ -4,7 +4,7 @@
 [![Test Coverage](https://codeclimate.com/github/leizhao4/ember-webcam/badges/coverage.svg)](https://codeclimate.com/github/leizhao4/ember-webcam/coverage)
 [![Ember Observer Score](https://emberobserver.com/badges/ember-webcam.svg)](https://emberobserver.com/addons/ember-webcam)
 
-This Ember CLI addon is a simple wrapper for [WebcamJS](https://pixlcore.com/read/WebcamJS) (v1.0.16). This addon uses Ember CLI v2.9.0.
+This Ember CLI addon is a simple wrapper for [WebcamJS](https://pixlcore.com/read/WebcamJS).
 
 ## Installation
 
