@@ -1,6 +1,6 @@
 import Component from 'ember-component';
 import computed from 'ember-computed';
-import Webcam from 'npm:webcamjs';
+import Webcam from 'webcamjs';
 import layout from '../templates/components/ember-webcam';
 
 export default Component.extend({
