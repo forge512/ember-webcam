@@ -183,10 +183,8 @@ rules:
   semi-spacing: 2
   semi: 2
   sort-vars: 0
-  space-after-keywords: 0
   space-before-blocks: 2
   space-before-function-paren: [2, { anonymous: always, named: never }]
-  space-before-keywords: 0
   space-in-parens: 2
   space-infix-ops: 2
   space-return-throw-case: 0
