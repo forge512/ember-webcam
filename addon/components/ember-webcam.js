@@ -7,6 +7,7 @@ export default Component.extend({
   layout,
   classNames: ['ember-webcam'],
   cameraId: computed(() => 'cam-' + Math.random().toString(36).substr(2, 10)),
+  swfLocation: '/assets/webcam.swf',
   init() {
     this._super(...arguments);
     this.set('camera', {
@@ -15,7 +16,7 @@ export default Component.extend({
   },
   didRender() {
     this._super(...arguments);
-    Webcam.setSWFLocation('/assets/webcam.swf');
+    Webcam.setSWFLocation(this.get('swfLocation'));
     Webcam.on('error', error => {
       if (!this.isDestroying && !this.isDestroyed) {
         this.get('didError')(error);
