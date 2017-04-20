@@ -1,7 +1,7 @@
 {
   "name": "ember-webcam",
   "version": "0.0.3",
-  "description": "Ember addon for WebcamJS integration",
+  "description": "An Ember wrapper for WebcamJS 1.x.",
   "keywords": [
     "ember-addon",
     "webcam",
@@ -26,6 +26,7 @@
     "ember-cli-babel": "^5.1.7",
     "ember-cli-htmlbars": "^1.1.1",
     "ember-cli-node-assets": "^0.2.2",
+    "ember-get-config": "^0.2.1",
     "webcamjs": "^1.0.16"
   },
   "devDependencies": {
