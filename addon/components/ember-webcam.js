@@ -1,13 +1,17 @@
+import config from 'ember-get-config';
 import Component from 'ember-component';
 import computed from 'ember-computed';
 import Webcam from 'webcamjs';
 import layout from '../templates/components/ember-webcam';
 
+const _enableFlashFallback = config['ember-webcam'].enableFlashFallback;
+const _flashFallbackDir = config['ember-webcam'].flashFallbackDir;
+
 export default Component.extend({
   layout,
   classNames: ['ember-webcam'],
   cameraId: computed(() => 'cam-' + Math.random().toString(36).substr(2, 10)),
-  swfLocation: '/assets/webcam.swf',
+  swfLocation: `/${_flashFallbackDir}/webcam.swf`,
   init() {
     this._super(...arguments);
     this.set('camera', {
@@ -16,7 +20,8 @@ export default Component.extend({
   },
   didRender() {
     this._super(...arguments);
-    Webcam.setSWFLocation(this.get('swfLocation'));
+    Webcam.set('enable_flash', _enableFlashFallback);
+    Webcam.set('swfURL', this.get('swfLocation'));
     Webcam.on('error', error => {
       if (!this.isDestroying && !this.isDestroyed) {
         this.get('didError')(error);
