@@ -18,7 +18,7 @@ export default Component.extend({
       snap: this.snap.bind(this)
     });
   },
-  didRender() {
+  didInsertElement() {
     this._super(...arguments);
     Webcam.set('enable_flash', _enableFlashFallback);
     Webcam.set('swfURL', this.get('swfLocation'));
@@ -29,10 +29,10 @@ export default Component.extend({
     });
     Webcam.attach('#' + this.get('cameraId'));
   },
-  willDestroy() {
+  willDestroyElement() {
+    this._super(...arguments);
     Webcam.reset();
     Webcam.off('error');
-    this._super(...arguments);
   },
   snap() {
     Webcam.snap(dataUri => {
