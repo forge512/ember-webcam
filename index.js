@@ -45,7 +45,7 @@ module.exports = {
   },
 
   treeForVendor(defaultTree) {
-    var browserVendorLib = new Funnel('node_modules/webcamjs/');
+    let browserVendorLib = new Funnel('node_modules/webcamjs/');
 
     browserVendorLib = map(browserVendorLib, (content) => `if (typeof FastBoot === 'undefined') { ${content} }`);
 
