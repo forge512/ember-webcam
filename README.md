@@ -1,8 +1,8 @@
 # Ember Webcam
-[![Build Status](https://travis-ci.org/leizhao4/ember-webcam.svg?branch=master)](https://travis-ci.org/leizhao4/ember-webcam)
+[![Build Status](https://travis-ci.org/forge512/ember-webcam.svg?branch=master)](https://travis-ci.org/forge512/ember-webcam)
 [![Ember Observer Score](https://emberobserver.com/badges/ember-webcam.svg)](https://emberobserver.com/addons/ember-webcam)
-[![Code Climate](https://codeclimate.com/github/leizhao4/ember-webcam/badges/gpa.svg)](https://codeclimate.com/github/leizhao4/ember-webcam)
-[![Test Coverage](https://codeclimate.com/github/leizhao4/ember-webcam/badges/coverage.svg)](https://codeclimate.com/github/leizhao4/ember-webcam/coverage)
+[![Code Climate](https://codeclimate.com/github/forge512/ember-webcam/badges/gpa.svg)](https://codeclimate.com/github/forge512/ember-webcam)
+[![Test Coverage](https://codeclimate.com/github/forge512/ember-webcam/badges/coverage.svg)](https://codeclimate.com/github/forge512/ember-webcam/coverage)
 
 This Ember CLI addon is a simple wrapper for
 [WebcamJS](https://pixlcore.com/read/WebcamJS) 1.x.
@@ -90,6 +90,12 @@ You may otherwise specify where you want `webcam.swf` to be located in your
 build, using the `flashFallbackDir` option. The default value is `'assets'`,
 meaning the file will be located at `<APP_ROOT>/assets/webcam.swf`.
 
+
+## Contributors
+
+Kind thanks to Lei Zhao (leizhao4) for initiating this project and of
+course the authors of [WebcamJS](https://pixlcore.com/read/WebcamJS).
+
 ## License
 
-This addon is [MIT Licensed](https://github.com/leizhao4/ember-webcam/blob/master/LICENSE.md).
+This addon is [MIT Licensed](https://github.com/forge512/ember-webcam/blob/master/LICENSE.md).
