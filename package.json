@@ -1,6 +1,6 @@
 {
   "name": "ember-webcam",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "An Ember wrapper for WebcamJS 1.x.",
   "keywords": [
     "ember-addon",
@@ -8,14 +8,14 @@
     "webcamjs"
   ],
   "license": "MIT",
-  "author": "Lei Zhao <leizhao4@gmail.com>",
+  "author": "Chris Bonser <cbonser@gmail.com>",
   "directories": {
     "doc": "doc",
     "test": "tests"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/leizhao4/ember-webcam.git"
+    "url": "https://github.com/forge512/ember-webcam.git"
   },
   "scripts": {
     "build": "ember build",
