@@ -59,6 +59,37 @@ export default Component.extend({
 <img src={{dataUri}}>
 ```
 
+## Fastboot Compatibility
+
+For Fastboot compatibility you must avoid rendering `ember-webcam` on
+the server.  One way to do this is wrap `ember-webcam` in your
+own component which only renders `ember-webcam` after the `didInsertElement` hook.
+
+```js
+import Component from 'ember-component';
+
+export default Component.extend({
+  didInsertElement() {
+    this.set('displayWebcam');
+  }
+)}
+```
+
+```hbs
+{{#if displayWebcam}}
+  {{#ember-webcam
+    didSnap=(action 'didSnap')
+    didError=(action 'didError')
+    as |camera|}}
+    <button {{action camera.snap}}>
+      Take Snapshot!
+    </button>
+  {{/ember-webcam}}
+
+  <img src={{dataUri}}>
+{{/if}}
+```
+
 ## Configurations
 
 By default, this addon will import a `webcam.swf` file from WebcamJS and include

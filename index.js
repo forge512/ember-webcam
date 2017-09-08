@@ -6,6 +6,10 @@ const defaultOptions = {
   flashFallbackDir: 'assets'
 };
 
+const map = require('broccoli-stew').map;
+const Funnel = require('broccoli-funnel');
+const mergeTrees = require('broccoli-merge-trees');
+
 // For ember-cli < 2.7 findHost doesnt exist so we backport from that version
 // for earlier version of ember-cli.
 // https://github.com/ember-cli/ember-cli/blame/16e4492c9ebf3348eb0f31df17215810674dbdf6/lib/models/addon.js#L533
@@ -40,6 +44,14 @@ module.exports = {
     }
   },
 
+  treeForVendor(defaultTree) {
+    let browserVendorLib = new Funnel('node_modules/webcamjs/');
+
+    browserVendorLib = map(browserVendorLib, (content) => `if (typeof FastBoot === 'undefined') { ${content} }`);
+
+    return new mergeTrees([defaultTree, browserVendorLib]);
+  },
+
   included() {
     const findHost = this._findHost || findHostShim;
     const app = findHost.call(this);
@@ -49,7 +61,7 @@ module.exports = {
 
     this._super.included.apply(this, arguments);
 
-    app.import('vendor/webcamjs/webcam.js', {
+    app.import('vendor/webcam.js', {
       using: [{
         transformation: 'amd',
         as: 'webcamjs'
