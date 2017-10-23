@@ -4,8 +4,8 @@ import computed from 'ember-computed';
 import Webcam from 'webcamjs';
 import layout from '../templates/components/ember-webcam';
 
-const _enableFlashFallback = config['ember-webcam'].enableFlashFallback;
-const _flashFallbackDir = config['ember-webcam'].flashFallbackDir;
+const _enableFlashFallback = config['ember-webcam'] && config['ember-webcam'].enableFlashFallback || false;
+const _flashFallbackDir = config['ember-webcam'] && config['ember-webcam'].flashFallbackDir;
 
 export default Component.extend({
   layout,
