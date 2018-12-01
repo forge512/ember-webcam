@@ -1,4 +1,3 @@
-/* jshint node: true */
 'use strict';
 
 const defaultOptions = {
@@ -23,7 +22,7 @@ const findHostShim = function () {
 };
 
 module.exports = {
-  name: 'ember-webcam',
+  name: require('./package').name,
 
   options: {
     nodeAssets: {
