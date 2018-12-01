@@ -9116,9 +9116,10 @@ wcwidth@^1.0.0, wcwidth@^1.0.1:
   dependencies:
     defaults "^1.0.3"
 
-webcamjs@^1.0.16:
-  version "1.0.22"
-  resolved "https://registry.yarnpkg.com/webcamjs/-/webcamjs-1.0.22.tgz#3039dfce5c8550eefb17205d23c3b665ca625fda"
+webcamjs@^1.0.25:
+  version "1.0.25"
+  resolved "https://registry.yarnpkg.com/webcamjs/-/webcamjs-1.0.25.tgz#4ac9645f25545fa01a29a59b8b00277a14f29416"
+  integrity sha512-U3FhvBoTguMM2dktZO6NsFfLQX/FbDYZvX5x/FxSE0OAVbvfPyKWoU40kgOzMDJ3AAKqkGcjtXo0ULOH/pgHJw==
 
 websocket-driver@>=0.5.1:
   version "0.6.5"

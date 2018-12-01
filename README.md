@@ -8,6 +8,8 @@
 This Ember CLI addon is a simple wrapper for
 [WebcamJS](https://pixlcore.com/read/WebcamJS) 1.x.
 
+**NOTE: WebcamJS is in maintenance mode. See readme for details**
+
 ## Installation
 
 ```
