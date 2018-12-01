@@ -1,8 +1,12 @@
 {
   "name": "ember-webcam",
-  "version": "0.0.8",
+  "version": "0.1.0",
   "description": "An Ember wrapper for WebcamJS 1.x.",
-  "keywords": ["ember-addon", "webcam", "webcamjs"],
+  "keywords": [
+    "ember-addon",
+    "webcam",
+    "webcamjs"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/forge512/ember-webcam.git"
