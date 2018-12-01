@@ -1,7 +1,7 @@
-/* jshint node: true */
+'use strict';
 
-module.exports = function (environment) {
-  const ENV = {
+module.exports = function(environment) {
+  let ENV = {
     modulePrefix: 'dummy',
     environment,
     rootURL: '/',
@@ -40,10 +40,12 @@ module.exports = function (environment) {
     ENV.APP.LOG_VIEW_LOOKUPS = false;
 
     ENV.APP.rootElement = '#ember-testing';
+    ENV.APP.autoboot = false;
   }
 
-  // if (environment === 'production') {
-  // }
+  if (environment === 'production') {
+    // here you can enable a production-specific feature
+  }
 
   return ENV;
 };

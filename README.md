@@ -1,4 +1,5 @@
 # Ember Webcam
+
 [![Build Status](https://travis-ci.org/forge512/ember-webcam.svg?branch=master)](https://travis-ci.org/forge512/ember-webcam)
 [![Ember Observer Score](https://emberobserver.com/badges/ember-webcam.svg)](https://emberobserver.com/addons/ember-webcam)
 [![Code Climate](https://codeclimate.com/github/forge512/ember-webcam/badges/gpa.svg)](https://codeclimate.com/github/forge512/ember-webcam)
@@ -23,8 +24,8 @@ snapshot (`camera.snap`).
 The component also takes two optional closure actions:
 
 - `didSnap` will be fired after a snapshot is taken, with the data URI of the
-snapshot. This URI can be passed around like any URL, or be submitted to your
-server.
+  snapshot. This URI can be passed around like any URL, or be submitted to your
+  server.
 
 - `didError` will be fired when an error occurs.
 
@@ -41,8 +42,8 @@ export default Component.extend({
     didError(error) {
       // Fires when a WebcamError occurs.
       console.error(error);
-    }
-  }
+    },
+  },
 });
 ```
 
@@ -62,7 +63,7 @@ export default Component.extend({
 ## Fastboot Compatibility
 
 For Fastboot compatibility you must avoid rendering `ember-webcam` on
-the server.  One way to do this is wrap `ember-webcam` in your
+the server. One way to do this is wrap `ember-webcam` in your
 own component which only renders `ember-webcam` after the `didInsertElement` hook.
 
 ```js
@@ -109,8 +110,8 @@ your `index.js` if you are working on an addon):
 module.exports = function(defaults) {
   const app = new EmberApp(defaults, {
     'ember-webcam': {
-      enableFlashFallback: false
-    }
+      enableFlashFallback: false,
+    },
   });
 
   // ...
@@ -120,7 +121,6 @@ module.exports = function(defaults) {
 You may otherwise specify where you want `webcam.swf` to be located in your
 build, using the `flashFallbackDir` option. The default value is `'assets'`,
 meaning the file will be located at `<APP_ROOT>/assets/webcam.swf`.
-
 
 ## Contributors
 
