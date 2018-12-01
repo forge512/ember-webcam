@@ -26,6 +26,7 @@
     "ember-cli-babel": "^5.1.7",
     "ember-cli-htmlbars": "^1.1.1",
     "ember-cli-node-assets": "^0.2.2",
+    "ember-cli-update": "^0.27.3",
     "ember-get-config": "^0.2.1",
     "webcamjs": "^1.0.16"
   },
